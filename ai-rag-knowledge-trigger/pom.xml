@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    AI RAG Knowledge Trigger模块POM文件
+    描述: 项目的触发器模块，负责定时任务或事件触发
+    版本: 1.0
+    日期: 2026-04-01
+    作用: 实现定时任务、事件监听和触发机制，确保知识库的及时更新和维护
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- Maven POM模型版本 -->
+    <modelVersion>4.0.0</modelVersion>
+    <!-- 父项目配置 -->
+    <parent>
+        <groupId>com.c</groupId>
+        <artifactId>ai-rag-knowledge</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <!-- 模块基本信息 -->
+    <artifactId>ai-rag-knowledge-trigger</artifactId>
+
+    <!-- 项目属性配置 -->
+    <properties>
+        <!-- 编译版本配置 -->
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <!-- 项目构建编码 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <!-- 依赖配置 -->
+    <dependencies>
+        <!-- Spring Boot Web依赖：提供REST接口支持 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- JSON处理库：用于处理JSON数据 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+        <!-- Spring事务依赖：提供事务支持 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+        </dependency>
+        <!-- 通用工具库：提供常用工具类 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+
+        <!-- 项目内部依赖：API模块 -->
+        <dependency>
+            <groupId>com.c</groupId>
+            <artifactId>ai-rag-knowledge-api</artifactId>
+        </dependency>
+        <!-- Redis客户端：用于缓存和分布式锁 -->
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson</artifactId>
+            <version>3.44.0</version>
+        </dependency>
+
+        <!-- Git操作库：用于处理Git仓库 -->
+        <dependency>
+            <groupId>org.eclipse.jgit</groupId>
+            <artifactId>org.eclipse.jgit</artifactId>
+        </dependency>
+
+    </dependencies>
+
+    <!-- 构建配置 -->
+    <build>
+        <!-- 最终构建文件名 -->
+        <finalName>ai-rag-knowledge-trigger</finalName>
+    </build>
+</project>

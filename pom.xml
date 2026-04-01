@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    AI RAG Knowledge 项目主POM文件
+    描述: 项目的核心配置文件，管理子模块依赖和构建配置
+    版本: 1.0
+    日期: 2026-04-01
+    作用: 作为项目的父POM，统一管理所有子模块的依赖版本和构建配置
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- Maven POM模型版本 -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 父项目配置 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.3</version>
+        <relativePath/>
+    </parent>
+
+    <!-- 项目基本信息 -->
+    <groupId>com.c</groupId>
+    <artifactId>ai-rag-knowledge</artifactId>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+
+    <!-- 子模块定义 -->
+    <modules>
+        <!-- API模块：提供接口定义和数据模型 -->
+        <module>ai-rag-knowledge-api</module>
+        <!-- 应用模块：核心业务逻辑和服务实现 -->
+        <module>ai-rag-knowledge-app</module>
+        <!-- 触发器模块：定时任务或事件触发机制 -->
+        <module>ai-rag-knowledge-trigger</module>
+    </modules>
+
+    <!-- 项目属性配置 -->
+    <properties>
+        <!-- 编译版本配置 -->
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <!-- Spring AI版本 -->
+        <spring-ai.version>0.8.1</spring-ai.version>
+        <!-- 项目构建编码 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- 仓库配置 -->
+    <repositories>
+        <!-- Spring里程碑仓库：用于获取Spring AI等里程碑版本 -->
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <!-- Spring快照仓库：用于获取Spring AI等快照版本 -->
+        <repository>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>https://repo.spring.io/snapshot</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+    </repositories>
+
+    <!-- 许可证配置 -->
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+
+    <!-- 依赖管理：统一管理项目依赖版本 -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- Spring AI依赖管理 -->
+            <dependency>
+                <groupId>org.springframework.ai</groupId>
+                <artifactId>spring-ai-bom</artifactId>
+                <version>${spring-ai.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- JSON处理库 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>2.0.28</version>
+            </dependency>
+            <!-- 通用工具库 -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.9</version>
+            </dependency>
+            <!-- Google核心库 -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>32.1.3-jre</version>
+            </dependency>
+            <!-- Redis客户端 -->
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>3.44.0</version>
+            </dependency>
+            <!-- Git操作库 -->
+            <dependency>
+                <groupId>org.eclipse.jgit</groupId>
+                <artifactId>org.eclipse.jgit</artifactId>
+                <version>5.13.0.202109080827-r</version>
+            </dependency>
+            <!-- 项目内部依赖 -->
+            <dependency>
+                <groupId>com.c</groupId>
+                <artifactId>ai-rag-knowledge-trigger</artifactId>
+                <version>1.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.c</groupId>
+                <artifactId>ai-rag-knowledge-api</artifactId>
+                <version>1.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!-- 构建配置 -->
+    <build>
+        <plugins>
+            <!-- 编译器插件：配置编译参数 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+            <!-- 资源插件：配置资源文件编码 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>2.5</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <!-- 版本管理插件：用于管理依赖版本 -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.7</version>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!-- 环境配置：不同环境的配置参数 -->
+    <profiles>
+        <!-- 开发环境 -->
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <!-- JVM参数配置 -->
+                <java_jvm>-Xms1G -Xmx1G -server -XX:MaxPermSize=256M -Xss256K -Dspring.profiles.active=test -XX:+DisableExplicitGC -XX:+UseG1GC
+                    -XX:LargePageSizeInBytes=128m -XX:+UseFastAccessorMethods -XX:+HeapDumpOnOutOfMemoryError
+                    -XX:HeapDumpPath=/export/Logs/xfg-frame-archetype-lite-boot
+                    -Xloggc:/export/Logs/xfg-frame-archetype-lite-boot/gc-xfg-frame-archetype-lite-boot.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps
+                </java_jvm>
+                <!-- 当前激活的环境 -->
+                <profileActive>dev</profileActive>
+            </properties>
+        </profile>
+        <!-- 测试环境 -->
+        <profile>
+            <id>test</id>
+            <properties>
+                <!-- JVM参数配置 -->
+                <java_jvm>-Xms1G -Xmx1G -server -XX:MaxPermSize=256M -Xss256K -Dspring.profiles.active=test -XX:+DisableExplicitGC -XX:+UseG1GC
+                    -XX:LargePageSizeInBytes=128m -XX:+UseFastAccessorMethods -XX:+HeapDumpOnOutOfMemoryError
+                    -XX:HeapDumpPath=/export/Logs/xfg-frame-archetype-lite-boot
+                    -Xloggc:/export/Logs/xfg-frame-archetype-lite-boot/gc-xfg-frame-archetype-lite-boot.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps
+                </java_jvm>
+                <!-- 当前激活的环境 -->
+                <profileActive>test</profileActive>
+            </properties>
+        </profile>
+        <!-- 生产环境 -->
+        <profile>
+            <id>prod</id>
+            <properties>
+                <!-- JVM参数配置 -->
+                <java_jvm>-Xms6G -Xmx6G -server -XX:MaxPermSize=256M -Xss256K -Dspring.profiles.active=release -XX:+DisableExplicitGC -XX:+UseG1GC
+                    -XX:LargePageSizeInBytes=128m -XX:+UseFastAccessorMethods -XX:+HeapDumpOnOutOfMemoryError
+                    -XX:HeapDumpPath=/export/Logs/fq-mall-activity-app
+                    -Xloggc:/export/Logs/xfg-frame-archetype-lite-boot/gc-xfg-frame-archetype-lite-boot.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps
+                </java_jvm>
+                <!-- 当前激活的环境 -->
+                <profileActive>prod</profileActive>
+            </properties>
+        </profile>
+    </profiles>
+
+</project>

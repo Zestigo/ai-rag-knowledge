@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    AI RAG Knowledge API模块POM文件
+    描述: 提供项目的接口定义和数据模型
+    版本: 1.0
+    日期: 2026-04-01
+    作用: 定义项目的公共接口和数据传输对象(DTO)
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- Maven POM模型版本 -->
+    <modelVersion>4.0.0</modelVersion>
+    <!-- 父项目配置 -->
+    <parent>
+        <groupId>com.c</groupId>
+        <artifactId>ai-rag-knowledge</artifactId>
+        <version>1.0</version>
+    </parent>
+
+    <!-- 模块基本信息 -->
+    <artifactId>ai-rag-knowledge-api</artifactId>
+
+    <!-- 项目属性配置 -->
+    <properties>
+        <!-- 编译版本配置 -->
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <!-- 项目构建编码 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <!-- 依赖配置 -->
+    <dependencies>
+        <!-- Spring Boot Web依赖：提供REST接口支持 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- Lombok依赖：简化代码，减少样板代码 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <!-- Spring AI核心依赖：提供AI相关功能支持 -->
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-core</artifactId>
+        </dependency>
+    </dependencies>
+
+    <!-- 构建配置 -->
+    <build>
+        <plugins>
+            <!-- 编译器插件：配置编译参数 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
