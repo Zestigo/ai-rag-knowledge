@@ -161,7 +161,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.c.ai.Application</mainClass>
+                    <mainClass>com.c.ai.rag.knowledge.Application</mainClass>
                     <layout>JAR</layout>
                 </configuration>
             </plugin>
