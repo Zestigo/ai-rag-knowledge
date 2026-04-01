@@ -1,7 +1,9 @@
+# 服务器配置
 server:
-  port: 8090
+  port: 8090  # 应用服务端口
 
+# 日志配置
 logging:
   level:
-    root: info
-  config: classpath:logback-spring.xml
+    root: info  # 根日志级别
+  config: classpath:logback-spring.xml  # 日志配置文件路径

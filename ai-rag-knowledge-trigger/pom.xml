@@ -31,45 +31,51 @@
     </properties>
     <!-- 依赖配置 -->
     <dependencies>
-        <!-- Spring Boot Web依赖：提供REST接口支持 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!-- JSON处理库：用于处理JSON数据 -->
+
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.ai</groupId>-->
+<!--            <artifactId>spring-ai-tika-document-reader</artifactId>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.ai</groupId>-->
+<!--            <artifactId>spring-ai-starter-vector-store-pgvector</artifactId>-->
+<!--        </dependency>-->
+
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
         </dependency>
-        <!-- Spring事务依赖：提供事务支持 -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
         </dependency>
-        <!-- 通用工具库：提供常用工具类 -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
         </dependency>
-
-        <!-- 项目内部依赖：API模块 -->
-        <dependency>
-            <groupId>com.c</groupId>
-            <artifactId>ai-rag-knowledge-api</artifactId>
-        </dependency>
-        <!-- Redis客户端：用于缓存和分布式锁 -->
         <dependency>
             <groupId>org.redisson</groupId>
             <artifactId>redisson</artifactId>
             <version>3.44.0</version>
         </dependency>
 
-        <!-- Git操作库：用于处理Git仓库 -->
         <dependency>
             <groupId>org.eclipse.jgit</groupId>
             <artifactId>org.eclipse.jgit</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-starter-model-ollama</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.c</groupId>
+            <artifactId>ai-rag-knowledge-api</artifactId>
+        </dependency>
     </dependencies>
 
     <!-- 构建配置 -->

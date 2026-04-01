@@ -31,23 +31,22 @@
     </properties>
     <!-- 依赖配置 -->
     <dependencies>
-        <!-- Spring Boot Web依赖：提供REST接口支持 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <!-- Lombok依赖：简化代码，减少样板代码 -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-        <!-- Spring AI核心依赖：提供AI相关功能支持 -->
-        <dependency>
-            <groupId>org.springframework.ai</groupId>
-            <artifactId>spring-ai-core</artifactId>
-        </dependency>
+    <!-- Spring Boot Web依赖：提供REST接口支持 -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <!-- Lombok依赖：简化代码，减少样板代码 -->
+    <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+    </dependency>
+    <!-- Spring AI核心依赖：提供AI相关功能支持 -->
+    <dependency>
+        <groupId>org.springframework.ai</groupId>
+        <artifactId>spring-ai-client-chat</artifactId>
+    </dependency>
     </dependencies>
-
     <!-- 构建配置 -->
     <build>
         <plugins>

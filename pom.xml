@@ -42,7 +42,7 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <!-- Spring AI版本 -->
-        <spring-ai.version>0.8.1</spring-ai.version>
+        <spring-ai.version>1.1.4</spring-ai.version>
         <!-- 项目构建编码 -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>

@@ -7,7 +7,16 @@
     <file url="file://$PROJECT_DIR$/ai-rag-knowledge-app/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ai-rag-knowledge-trigger/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ai-rag-knowledge-trigger/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ai-rag-knowledge/ai-rag-knowledge-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ai-rag-knowledge/ai-rag-knowledge-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ai-rag-knowledge/ai-rag-knowledge-app/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ai-rag-knowledge/ai-rag-knowledge-app/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ai-rag-knowledge/ai-rag-knowledge-trigger/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ai-rag-knowledge/ai-rag-knowledge-trigger/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ai-rag-knowledge/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ai-rag-knowledge/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../../../../Develop/apache-maven-3.8.9/mvn_repo/org/springframework/boot/spring-boot-starter-parent/3.2.3/src/main/resources" charset="UTF-8" />
   </component>
 </project>
