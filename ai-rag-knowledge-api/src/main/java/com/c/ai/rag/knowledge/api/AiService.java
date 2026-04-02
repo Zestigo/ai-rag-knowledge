@@ -16,27 +16,6 @@ import java.io.IOException;
 public interface AiService {
 
     /**
-     * 上传文档至知识库
-     * 将文件解析、切片并向量化存储至指定的知识库中
-     *
-     * @param file          待上传的 MultipartFile 文件
-     * @param knowledgeName 知识库分类标识
-     * @return 存储结果描述及切片统计
-     * @throws IOException 文件处理过程中的 IO 异常
-     */
-    String uploadDocument(MultipartFile file, String knowledgeName) throws IOException;
-
-    /**
-     * RAG 检索增强对话（流式）
-     * 结合向量数据库召回上下文，并引导模型基于特定知识库内容回答问题
-     *
-     * @param message       用户的查询文本
-     * @param knowledgeName 检索的目标知识库名称
-     * @return 实时生成的增量字符串文本流
-     */
-    Flux<String> ragChat(String message, String knowledgeName);
-
-    /**
      * 同步生成 AI 响应（指定模型）
      * 指定特定的 AI 模型执行对话任务并获取完整结果
      *
