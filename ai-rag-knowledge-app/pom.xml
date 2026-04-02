@@ -43,25 +43,14 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
-        <!-- Spring AI OpenAI依赖：集成OpenAI模型 -->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.ai</groupId>-->
-<!--            <artifactId>spring-ai-openai-spring-boot-starter</artifactId>-->
-<!--        </dependency>-->
-
-<!--        &lt;!&ndash; Spring AI Tika文档读取器：用于处理各种格式的文档 &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.ai</groupId>-->
-<!--            <artifactId>spring-ai-tika-document-reader</artifactId>-->
-<!--        </dependency>-->
-
-<!--        &lt;!&ndash; Spring AI PGVector存储依赖：使用PostgreSQL作为向量存储 &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.ai</groupId>-->
-<!--            <artifactId>spring-ai-pgvector-store-spring-boot-starter</artifactId>-->
-<!--        </dependency>-->
-
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-tika-document-reader</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-pgvector-store</artifactId>
+        </dependency>
         <!-- Spring AI Ollama依赖：集成Ollama本地AI模型 -->
         <dependency>
             <groupId>org.springframework.ai</groupId>
